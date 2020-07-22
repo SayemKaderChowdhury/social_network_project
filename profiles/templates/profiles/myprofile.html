@@ -6,5 +6,27 @@
 
 
 {% block content %}
-    <h1>My Profile</h1>
+    <h1>My Profile {{profile}}</h1>
+    <hr>
+    <h1>{{profile.first_name}}</h1>
+    <br>
+    <img src="{{profile.avatar.url}}" alt="">
+    <br>
+    {{profile.avatar.url}}
+    <br>
+    {{profile.avatar}}
+    <br>
+    <h1>{{profile.last_name}}</h1>
+    <br>
+    <h1>{{profile.bio}}</h1>
+    <br>
+    <h1>{{profile.country}}</h1>
+    <br>
+    <h1>{{profile.get_frineds_no}}</h1>
+    <br>
+    <ul>
+        {% for friend in profile.get_friend_no %}
+            <li>{{friend}}</li>
+        {% endfor %}
+    </ul>
 {% endblock content %}
